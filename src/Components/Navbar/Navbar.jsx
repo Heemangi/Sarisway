@@ -4,6 +4,7 @@ import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 import logo from '../Assets/logo_transparent.png';
 import cart from "../Assets/shopping-bag-icon.png"
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -16,10 +17,14 @@ const Navbar = () => {
 
         <div className='navli'>
         <ul className="navmenu">
-          <li onClick={()=>{setMenu("Sarees")}}>Sarees {menu==="Sarees"?<hr/>:<></>}</li>
-          <li onClick={()=>{setMenu("Lehangas")}}>Lehangas {menu==="Lehangas"?<hr/>:<></>}</li>
-          <li onClick={()=>{setMenu("Suits")}}>Suits {menu==="Suits"?<hr/>:<></>}</li>
-          <li onClick={()=>{setMenu("PartWear")}}>PartyWear {menu==="PartWear"?<hr/>:<></>}</li>
+          <li onClick={()=>{setMenu("Sarees")}}>
+            <Link style={{textDecoration: 'none', color: 'black'}} to='/sarees'>Sarees</Link>{menu==="Sarees"?<hr/>:<></>}</li>
+          <li onClick={()=>{setMenu("Lehangas")}}>
+            <Link style={{textDecoration: 'none', color: 'black'}} to='/lehangas'>Lehangas</Link> {menu==="Lehangas"?<hr/>:<></>}</li>
+          <li onClick={()=>{setMenu("Suits")}}>
+            <Link style={{textDecoration: 'none', color: 'black'}}to='/suits'>Suits</Link> {menu==="Suits"?<hr/>:<></>}</li>
+          <li onClick={()=>{setMenu("PartWear")}}>
+            <Link style={{textDecoration: 'none', color: 'black'}} to='/partywear'>PartyWear</Link> {menu==="PartWear"?<hr/>:<></>}</li>
         </ul>
         </div>
 
