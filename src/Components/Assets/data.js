@@ -16,25 +16,25 @@
 // 15.jpg -> Silk lehanga embroidered with turqoise Partywear
 // 16.jpg -> Weaving Saree in mustard georgette Partywear
 // 17.jpg -> Zari Saree in Banarasi Silk Partywear
-import img1 from "./Assets/1.jpg"
-import img2 from "./Assets/2.jpg"
-import img3 from "./Assets/3.jpg"
-import img4 from "./Assets/4.jpg"
-import img5 from "./Assets/5.jpg"
-import img6 from "./Assets/6.jpg"
-import img7 from "./Assets/7.jpg"
-import img8 from "./Assets/1.jpg"
-import img9 from "./Assets/1.jpg"
-import img10 from "./Assets/10.jpg"
-import img11 from "./Assets/11.jpg"
-import img12 from "./Assets/12.jpg"
-import img13 from "./Assets/13.jpg"
-import img14 from "./Assets/14.jpg"
-import img15 from "./Assets/15.jpg"
-import img16 from "./Assets/16.jpg"
-import img17 from "./Assets/17.jpg"
+import img1 from "./1.jpg"
+import img2 from "./2.jpg"
+import img3 from "./3.jpg"
+import img4 from "./4.jpg"
+import img5 from "./5.jpg"
+import img6 from "./6.jpg"
+import img7 from "./7.jpg"
+import img8 from "./8.jpg"
+import img9 from "./9.jpg"
+import img10 from "./10.jpg"
+import img11 from "./11.jpg"
+import img12 from "./12.jpg"
+import img13 from "./13.jpg"
+import img14 from "./14.jpg"
+import img15 from "./15.jpg"
+import img16 from "./16.jpg"
+import img17 from "./17.jpg"
 
-let data_product = [
+const data_product = [
     {
         id: 1,
         name: "Printed Organza Lehanga in peach",
@@ -138,5 +138,7 @@ let data_product = [
         price: 19999,
     },
 
-]
+];
+
+export default data_product;
 
