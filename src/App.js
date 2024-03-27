@@ -1,27 +1,31 @@
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Shop from './Pages/Shop'
-import ShopCategory from './Pages/ShopCategory'
-import Product from './Pages/Product'
-import LoginSignup from './Pages/LoginSignup'
-import Cart from './Pages/Cart'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react'; // Import useEffect and useState
+import Shop from './Pages/Shop';
+import ShopCategory from './Pages/ShopCategory';
+import Product from './Pages/Product';
+import LoginSignup from './Pages/LoginSignup';
+import Cart from './Pages/Cart';
 import Carousel from './Components/Carousel/Carousel';
 import { caroimages } from './Components/Carousel/Data';
 import Footer from './Components/Footer/Footer';
+import sarees_banner from "./Components/Assets/sarees.jpg";
+import lehanga_banner from "./Components/Assets/lehanga.png";
+import suits_banner from "./Components/Assets/suits.jpg";
+import party_banner from "./Components/Assets/lehanga_banner.jpg";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar/>
-        <Carousel images={caroimages}/>
         <Routes>
-          <Route path='/' element={<Shop/>}/>
-          <Route path='/sarees' element={<ShopCategory category="sarees"/>}/>
-          <Route path='/lehangas' element={<ShopCategory category="lehangas"/>}/>
-          <Route path='/suits' element={<ShopCategory category="suits"/>}/>
-          <Route path='/partywear' element={<ShopCategory category="partywear"/>}/>
+          <Route path='/' element={<Home />}/>
+          <Route path='/sarees' element={<ShopCategory banner={sarees_banner} category="sarees"/>}/>
+          <Route path='/lehangas' element={<ShopCategory banner={lehanga_banner} category="lehangas"/>}/>
+          <Route path='/suits' element={<ShopCategory banner={suits_banner} category="suits"/>}/>
+          <Route path='/partywear' element={<ShopCategory banner={party_banner} category="partywear"/>}/>
           <Route path='/product' element={<Product/>}>
             <Route path=':productid' element={<Product/>}/>
           </Route>
@@ -31,6 +35,18 @@ function App() {
         <Footer/>
       </BrowserRouter>
     </div>
+  );
+}
+
+function Home() {
+  // Move the location state to Home component
+  const location = useLocation();
+
+  return (
+    <>
+      {location.pathname === '/' && <Carousel images={caroimages}/>}
+      <Shop />
+    </>
   );
 }
 
