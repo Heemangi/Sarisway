@@ -8,6 +8,7 @@ import LoginSignup from './Pages/LoginSignup'
 import Cart from './Pages/Cart'
 import Carousel from './Components/Carousel/Carousel';
 import { caroimages } from './Components/Carousel/Data';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -20,13 +21,14 @@ function App() {
           <Route path='/sarees' element={<ShopCategory category="sarees"/>}/>
           <Route path='/lehangas' element={<ShopCategory category="lehangas"/>}/>
           <Route path='/suits' element={<ShopCategory category="suits"/>}/>
-          <Route path='/partywear' element={<ShopCategory category="partwear"/>}/>
+          <Route path='/partywear' element={<ShopCategory category="partywear"/>}/>
           <Route path='/product' element={<Product/>}>
             <Route path=':productid' element={<Product/>}/>
           </Route>
           <Route path='/login' element={<LoginSignup/>}/>
           <Route path='/cart' element={<Cart/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
